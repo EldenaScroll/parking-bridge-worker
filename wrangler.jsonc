@@ -11,7 +11,7 @@
 		{
 			"queue": "frame-jobs", 
 			"max_batch_size": 5,
-			"max_batch_timeout": 5
+			"max_batch_timeout": 1
 		}
 		]
 	}
