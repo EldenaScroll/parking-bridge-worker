@@ -3,16 +3,18 @@
  * https://developers.cloudflare.com/workers/wrangler/configuration/
  */
 {
-	"$schema": "node_modules/wrangler/config-schema.json",
 	"name": "parking-bridge-worker",
 	"main": "src/index.ts",
-	"compatibility_date": "2026-02-05",
-	"observability": {
-		"enabled": true
-	},
-	"compatibility_flags": [
-		"nodejs_compat"
-	]
+	"compatibility_date": "2026-02-02",
+	"queues": {
+		"consumers": [
+		{
+			"queue": "frame-jobs", 
+			"max_batch_size": 5,
+			"max_batch_timeout": 5
+		}
+		]
+	}
 	/**
 	 * Smart Placement
 	 * https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
